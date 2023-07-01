@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BigBear</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+   <div id="header">
+    <div class="container">
+      <nav>
+        <img class="bear" src="images/logobear.png" alt="">
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#book">Books</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fa fa-close" style="font-size:24px"  ></i>         
+        </ul>
+        <i class="fa fa-bars" style="font-size:24px"  ></i>
+      </nav>
+      <div class="header-text">
+        <p>FrontEnd Developer</p>
+        <h1>Hi, I'm <span>Vel prasanth</span></h1>
+      </div>
+    </div>
+   </div>
+   <!-------------------------------about----------------->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img class="me"  src="images/me.jpg" >
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>Hi I’m Vel prasanth. An Engineering undergrad currently in 3rd year. After completing high school I thought to myself, "If everyone else is jumping off a bridge, why don't I just get a running start?". Later I found out Engineering wasn't my cup of tea. (especially in the Electrical branch). After successfully wasting two years of my life. And don't worry, I don't endorse bridge-jumping anymore – I'm all for bridge-building now. So this site is one example.I will post content on LinkedIn  ,If you are interested visit my linkedIn page.
+             <br>
+             <br>
+              Well thanks for reading 
+                 <br>
+                 <br>
+               A quote to mention:
+                   “Be not afraid of growing slowly 
+                     But afraid of only standing still” 
+               </p>
+            
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick="opentab('project')">Project</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+           <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>FrontEnd</span><br>Website Developer</li>
+              <li><span>Finance</span><br>Personal Finance</li>
+            </ul>
+           </div>
+           <div class="tab-contents" id="project">
+            <ul>
+              <li><span>Projects</span><br>Currrently I'm working on my personal projects.</li>
+            </ul>
+           </div>
+           <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2021-2025</span><br>Karpagam College of Engineering </li>
+              <li><span>College</span><br>Literally I learnt nothing in college</li>
+            </ul>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>   
+      <!-------------------------------Books----------------->
+      <div id="book">
+          <div class="container-2">
+              <h1 class="sub-title">Books I Recommend</h1>
+              <br>
+              <div class="slideshow-container">
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="projectimage/IMG_20230701_083623.jpg" style="width:50%">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="projectimage/IMG_20230701_083658.jpg" style="width:50%">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="projectimage/IMG_20230701_083723.jpg" style="width:50%">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="projectimage/IMG_20230701_083814.jpg" style="width:50%">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext"></div>
+                <img src="projectimage/IMG_20230701_083907.jpg" style="width:50%">
+              </div>
+              </div>
+              <br>
+              <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+          </div>
+      </div>
+
+      <div id="portfolio">
+        <div class="container-3">
+           <h1 class="sub-title">Portfolio</h1>
+           <img src="images/progress.png" class="prog" >
+        </div>
+      </div>
+
+        <div id="contact">
+          <h1 class="sub-title">Contact Me</h1>
+          <div class="social-icons mt-4">
+            <a href="mailto:velprasanth63@gmail.com" target="_blank"><button class="btn">message</button></a> <br>
+        </div>
+        </div>
+
+        <div class="copyright"> 
+          <p> Copyright © Prasanth.</p>
+        </div>
+
+       <script>
+        let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+       }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+       dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+     setTimeout(showSlides, 3000); // Change image every 2 seconds
+       }
+       </script>
+
+
+       <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+          for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+          }
+          for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+          
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+       </script>
+       
+</body>
+</html>
+
+
+<!---<script>
+        var sidemen= document.getElementById("sidemenu");
+
+        function openmenu(){
+          sidemeu.style.right="0";
+        }
+        function closemenu(){
+          sidemeu.style.right = "-200px";
+        }
+       </script>--->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
